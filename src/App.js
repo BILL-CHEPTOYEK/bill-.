@@ -64,8 +64,8 @@ function App() {
       <section id="home" className="hero-section">
         <div className="hero-overlay" />
         <div className="hero-content container">
-          {/* IMPORTANT: For this image to load, ensure 'dp.jpg' is in your project's 'public' folder. */}
-          <img src="/dp.jpg" alt="Cheptoyek Bill" className="profile-image" onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/180x180/ADD8E6/000000?text=Profile"; }} />
+          {/* Profile image - loads from public folder */}
+          <img src="/dp.jpg" alt="Cheptoyek Bill" className="profile-image" />
           <h1>Cheptoyek Bill</h1>
           <p className="subtitle">Software Engineer & Full-Stack Developer</p>
           <a href="#projects" className="btn-primary">Explore My Work</a>
@@ -100,10 +100,8 @@ function App() {
           <ProjectCard
             title="Accounting System"
             description="A robust web-based accounting system for managing financial transactions, generating reports (General Ledger, Balance Sheet, Income Statement), and ensuring double-entry principle compliance."
-            github="https://github.com/BILL-CHEPTOYEK/Accounting-for-software-engineers-Resources" // Assuming this is the relevant repo
-            // IMPORTANT: For this image to load, ensure 'accountingsystem.png' is in your project's 'public' folder.
+            github="https://github.com/BILL-CHEPTOYEK/Accounting-for-software-engineers-Resources"
             imageSrc="/accountingsystem.png"
-            placeholderSrc="https://placehold.co/400x250/AEC9FF/000000?text=Accounting+System"
           />
 
           {/* TricReality Project */}
@@ -111,35 +109,31 @@ function App() {
             title="TricReality - Real Estate & Project Management"
             description="A comprehensive real estate and project management system streamlining condominium project setup, financial tracking, sales management, payment scheduling, and customer relations. Built with Node.js, Express, PostgreSQL, and React."
             github="https://github.com/TricsoftTechnologies/TricRealty"
-            // IMPORTANT: For this image to load, ensure 'tricreality.png' is in your project's 'public' folder.
             imageSrc="/tricreality.png"
-            placeholderSrc="https://placehold.co/400x250/B8F2E6/000000?text=TricReality"
           />
 
           {/* FarmConnect Project */}
           <ProjectCard
             title="FarmConnect - Farmer-to-Market Mobile App"
             description="A Flutter mobile app empowering smallholder farmers in Uganda with direct access to urban produce markets via trusted local agents, ethical delivery, and escrow payments."
-            github="https://github.com/BILL-CHEPTOYEK/FarmConnect" // Assuming this is the relevant repo
-            // IMPORTANT: For this image to load, ensure 'farmconnect.png' is in your project's 'public' folder.
+            github="https://github.com/BILL-CHEPTOYEK/FarmConnect"
             imageSrc="/farmconnect.png"
-            placeholderSrc="https://placehold.co/400x250/FFD8BE/000000?text=FarmConnect"
           />
 
-          {/* Existing Project 1 */}
+          {/* Bus Ticketing System Project */}
           <ProjectCard
             title="Bus Ticketing System (BSE25-18)"
             description="A collaborative, scalable bus ticketing system with integrated CI/CD and Django backend."
             github="https://github.com/BILL-CHEPTOYEK/BSE25-18"
-            imageSrc="https://placehold.co/400x250/ADE8F4/000000?text=Bus+Ticketing+System" // Placeholder image
+            imageSrc="/busticketing.svg"
           />
 
-          {/* Existing Project 2 */}
+          {/* Hotel Management System Project */}
           <ProjectCard
             title="Hotel Management System API"
             description="Comprehensive RESTful API for hotel operations using Node.js and MongoDB."
             github="https://github.com/BILL-CHEPTOYEK/hotelms-api"
-            imageSrc="https://placehold.co/400x250/C1E1C1/000000?text=Hotel+API" // Placeholder image
+            imageSrc="/hotelapi.svg"
           />
         </div>
       </section>
@@ -171,14 +165,8 @@ function App() {
   );
 }
 
-// ProjectCard Component - now accepts an imageSrc prop
-function ProjectCard({ title, description, github, imageSrc, placeholderSrc }) {
-  // Use a fallback to a more descriptive placeholder if the provided imageSrc fails
-  const handleError = (e) => {
-    e.target.onerror = null; // Prevent infinite loop if placeholder also fails
-    e.target.src = placeholderSrc || "https://placehold.co/400x250/cccccc/333333?text=Image+Not+Found";
-  };
-
+// ProjectCard Component - simplified without external placeholder fallbacks
+function ProjectCard({ title, description, github, imageSrc }) {
   return (
     <div className="project-card">
       <div className="project-image-container">
@@ -186,7 +174,6 @@ function ProjectCard({ title, description, github, imageSrc, placeholderSrc }) {
           src={imageSrc}
           alt={title}
           className="project-image"
-          onError={handleError}
         />
       </div>
       <h3>{title}</h3>
