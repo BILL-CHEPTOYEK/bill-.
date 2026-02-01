@@ -21,7 +21,7 @@ Check out the live site here: https://bill-cheptoyek.github.io/CHEPTOYEK-BILL/
 Getting Started
 
 To set up the project locally, follow these steps:
-
+.
     Clone the Repository:
 
     bash
