@@ -1,6 +1,6 @@
 Cheptoyek Bill's Personal Website 🌐
 
-Welcome to my personal portfolio website repository, built with React! This site showcases my work as a software engineering student and full-stack developer, including a dedicated section for my resume, projects, and a dynamic contact section. Explore my skills, projects, and journey in tech.
+Welcome to my personal portfolio website repository, built with React! This site showcases my work as a software engineering student and full-stack developer, including a dedicated section for my resume, projects, and a dynamic contact section. Explore my skills, projects, and journey in tech..
 Features
 
     Responsive Design: The website is fully responsive, optimized for viewing across various devices.
