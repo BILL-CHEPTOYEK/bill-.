@@ -49,7 +49,7 @@ bash
 
     npm run build
 
-    This command creates an optimized production build in the build folder.
+    This command creates an optimized production build in the build folder..
 
 Project Structure
 
